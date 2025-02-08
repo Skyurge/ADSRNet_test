@@ -96,7 +96,7 @@ class Model(nn.Module):
                 )
             elif pre_train:
                 print('Load the model from {}'.format(pre_train))
-                load_from = torch.load(pre_train, map_location='cuda:0')
+                load_from = torch.load(pre_train, map_location='cuda:0', weights_only=True)
                 # load_from = torch.load(pre_train)
         else:
             load_from = torch.load(
